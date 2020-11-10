@@ -50,11 +50,14 @@
         <dependency>
             <groupId>com.aventstack</groupId>
             <artifactId>extentreports</artifactId>
-            <version>5.0.4</version>
+            <version>4.1.7</version>
         </dependency>
 
-
-
+        <dependency>
+            <groupId>com.opencsv</groupId>
+            <artifactId>opencsv</artifactId>
+            <version>5.1</version>
+        </dependency>
 
     </dependencies>
 </project>
