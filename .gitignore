@@ -54,5 +54,4 @@ buildNumber.properties
 ##########################
 ## Relatórios
 ##########################
-reports/*
-
+reports/
