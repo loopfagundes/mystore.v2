@@ -3,7 +3,7 @@
 <suite name = "MyStore v.2" verbose="1">
     <test name = "Fluxo de Compra">
         <classes>
-
+            <class name="testcases.CompraComSucessoTestCase"></class>
         </classes>
     </test>
 </suite>
