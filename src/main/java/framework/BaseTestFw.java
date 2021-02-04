@@ -34,6 +34,6 @@ public class BaseTestFw {
     @AfterClass
     public void tearDown() {
         ReportFw.tearDownFinish();
-        //quitDriver();
+        quitDriver();
     }
 }
