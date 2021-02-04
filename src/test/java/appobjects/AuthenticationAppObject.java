@@ -19,4 +19,8 @@ public class AuthenticationAppObject {
     public WebElement getCriarContaTextField() {
         return driver.findElement(By.id("email_create"));
     }
+
+    public WebElement getCriarContaButton() {
+        return driver.findElement(By.id("SubmitCreate"));
+    }
 }
