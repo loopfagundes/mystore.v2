@@ -23,6 +23,8 @@ public class DriverManagerFactoryFw {
             case FIREFOX:
                 WebDriverManager.firefoxdriver().setup();
                 driver = new FirefoxDriver();
+                driver.manage().window().maximize();
+                driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
                 break;
 
             case EDGE:

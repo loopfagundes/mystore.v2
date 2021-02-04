@@ -12,7 +12,12 @@ import static framework.DriverManagerFactoryFw.*;
 public class BaseTestFw {
     private WebDriver driver;
     private static FileOperations fileOperations = new FileOperations();
-    private String PATH = System.getProperty("user.dir") + File.separator + "src" + File.separator + "main" + File.separator + "resources" + File.separator + "urlProperties" + File.separator + "url.properties";
+    private String PATH = System.getProperty("user.dir")
+            + File.separator + "src"
+            + File.separator + "main"
+            + File.separator + "resources"
+            + File.separator + "urlProperties"
+            + File.separator + "url.properties";
     private String prop = "urlIndex";
 
     public WebDriver getDriver() {
