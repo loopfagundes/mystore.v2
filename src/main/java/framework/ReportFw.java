@@ -26,9 +26,6 @@ public class ReportFw {
 
         extent = new ExtentReports();
         extent.attachReporter(reporter);
-
-        extent.setSystemInfo("Sistema Operacional", "Windows 10");
-        extent.setSystemInfo("Browser", "Chrome");
     }
 
     public static void setUpStart(String descricao) {

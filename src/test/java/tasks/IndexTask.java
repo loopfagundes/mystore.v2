@@ -17,7 +17,12 @@ public class IndexTask {
     }
 
     public void acessaTelaDeLogin() {
-        ReportFw.log(Status.INFO, "Clica a botao de Sign In");
-        indexAppObject.getSignUpButton().click();
+        ReportFw.log(Status.INFO, "A pagina de Index.");
+        if (indexAppObject.getSignUpButton().isDisplayed()) {
+            indexAppObject.getSignUpButton().click();
+            ReportFw.log(Status.PASS, "Acessa na pagina de login.");
+        } else {
+            ReportFw.log(Status.FAIL, "Nao acessa na pagina de login.");
+        }
     }
 }

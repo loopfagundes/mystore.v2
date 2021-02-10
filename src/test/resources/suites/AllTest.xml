@@ -1,5 +1,4 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
-
 <suite name = "MyStore v.2" verbose="1">
     <test name = "Fluxo de Compra">
         <classes>

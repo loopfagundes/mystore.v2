@@ -6,9 +6,7 @@ import framework.ReportFw;
 import framework.ScreenshotFw;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.Test;
-import tasks.AuthenticationTask;
-import tasks.CadastraUsuarioTask;
-import tasks.IndexTask;
+import tasks.*;
 
 public class CompraComSucessoTestCase extends BaseTestFw {
 
@@ -16,6 +14,8 @@ public class CompraComSucessoTestCase extends BaseTestFw {
     private IndexTask indexTask = new IndexTask(driver);
     private AuthenticationTask authenticationTask = new AuthenticationTask(driver);
     private CadastraUsuarioTask cadastraUsuarioTask = new CadastraUsuarioTask(driver);
+    private MinhaContaTask myAccountTask = new MinhaContaTask(driver);
+    private ProdutoTask produtoTask = new ProdutoTask(driver);
 
     @Test
     public void test() {
@@ -24,6 +24,8 @@ public class CompraComSucessoTestCase extends BaseTestFw {
             indexTask.acessaTelaDeLogin();
             authenticationTask.paginaAuthentication();
             cadastraUsuarioTask.registroUsuario();
+            myAccountTask.telaDaMinhaConta();
+            produtoTask.descricaoProduto();
         } catch (Exception e) {
             System.out.println(e.getMessage());
             ReportFw.log(Status.ERROR, e.getMessage(), ScreenshotFw.viewScreenshot(driver));

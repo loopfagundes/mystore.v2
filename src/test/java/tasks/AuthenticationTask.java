@@ -3,6 +3,7 @@ package tasks;
 import appobjects.AuthenticationAppObject;
 import com.aventstack.extentreports.Status;
 import com.github.javafaker.Faker;
+import framework.JsExecutorFw;
 import framework.ReportFw;
 import framework.ScreenshotFw;
 import org.openqa.selenium.WebDriver;
@@ -29,6 +30,7 @@ public class AuthenticationTask {
         if (authenticationAppObject.getValidadoPaginaAuthenticationText().getText().equals("AUTHENTICATION")) {
             ReportFw.log(Status.PASS, "A validacao da pagina de Authentication esta correta.");
         } else {
+            JsExecutorFw.highlight(driver, authenticationAppObject.getValidadoPaginaAuthenticationText());
             ReportFw.log(Status.FAIL, "A validacao da pagina de Authentication nao esta correta.", ScreenshotFw.viewScreenshot(driver));
         }
     }
