@@ -6,6 +6,7 @@ import framework.JsExecutorFw;
 import framework.ReportFw;
 import framework.ScreenshotFw;
 import org.openqa.selenium.WebDriver;
+import org.testng.Assert;
 
 public class ProdutoTask {
     private WebDriver driver;
@@ -20,6 +21,7 @@ public class ProdutoTask {
         ReportFw.log(Status.INFO, "A pagina dos produtos.");
         validadoTelaDosProdutos();
         escolheProduto();
+        nomeDoProduto();
     }
 
     private void validadoTelaDosProdutos() {
@@ -33,5 +35,15 @@ public class ProdutoTask {
 
     private void escolheProduto() {
         produtoAppObject.getEscolheVestidoButton().click();
+    }
+
+    private void nomeDoProduto() {
+        Assert.assertEquals("Printed Summer Dress", produtoAppObject.getNomeDoProdutoText().getText());
+        if (produtoAppObject.getNomeDoProdutoText().getText().equals("Printed Summer Dress")) {
+            ReportFw.log(Status.PASS, "O nome do produto esta correta.");
+        } else {
+            JsExecutorFw.highlight(driver, produtoAppObject.getNomeDoProdutoText());
+            ReportFw.log(Status.FAIL, "O nome do produto esta incorreta. Verificado, por favor.");
+        }
     }
 }

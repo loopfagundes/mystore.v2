@@ -6,6 +6,7 @@ import framework.JsExecutorFw;
 import framework.ReportFw;
 import framework.ScreenshotFw;
 import org.openqa.selenium.WebDriver;
+import org.testng.Assert;
 
 public class MinhaContaTask {
     private WebDriver driver;
@@ -23,6 +24,7 @@ public class MinhaContaTask {
     }
 
     private void validadoTelaDaMinhaConta() {
+        Assert.assertEquals("MY ACCOUNT", myAccountAppObject.getValidadoTelaDaMinhaContaText().getText());
         if (myAccountAppObject.getValidadoTelaDaMinhaContaText().getText().equals("MY ACCOUNT")) {
             ReportFw.log(Status.PASS, "A tela da minha conta esta correta.");
         } else {
@@ -36,6 +38,7 @@ public class MinhaContaTask {
             myAccountAppObject.getSelecionaWomenButton().click();
             ReportFw.log(Status.PASS, "Acessa na pagina dos produtos.");
         } else {
+            JsExecutorFw.highlight(driver, myAccountAppObject.getSelecionaWomenButton());
             ReportFw.log(Status.FAIL, "Nao acessa na pagina dos produtos.");
         }
     }

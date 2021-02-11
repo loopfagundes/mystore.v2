@@ -18,4 +18,10 @@ public class ProdutoAppObject {
     public WebElement getEscolheVestidoButton() {
         return driver.findElement(By.cssSelector("#center_column > ul > li:nth-child(5) > div > div.left-block > div > a.product_img_link > img"));
     }
+
+    public WebElement getNomeDoProdutoText() {
+        WebElement iframeElement = driver.findElement(By.cssSelector(".fancybox-iframe"));
+        WebDriver iframeDriver = driver.switchTo().frame(iframeElement);
+        return iframeDriver.findElement(By.cssSelector("#product > div > div > div.pb-center-column.col-xs-12.col-sm-4 > h1"));
+    }
 }
