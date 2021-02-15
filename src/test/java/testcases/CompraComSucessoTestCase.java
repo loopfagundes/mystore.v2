@@ -10,7 +10,7 @@ import tasks.*;
 
 public class CompraComSucessoTestCase extends BaseTestFw {
 
-    private WebDriver driver = getDriver();
+    private final WebDriver driver = getDriver();
     private IndexTask indexTask = new IndexTask(driver);
     private AuthenticationTask authenticationTask = new AuthenticationTask(driver);
     private CadastraUsuarioTask cadastraUsuarioTask = new CadastraUsuarioTask(driver);

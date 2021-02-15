@@ -72,7 +72,7 @@ public class ProdutoTask {
 
     private void fazerCheckout() {
         WaitFw.visibilityOf(driver, produtoAppObject.getFazerCheckoutButton());
-        if(produtoAppObject.getFazerCheckoutButton().isDisplayed()) {
+        if (produtoAppObject.getFazerCheckoutButton().isDisplayed()) {
             produtoAppObject.getFazerCheckoutButton().click();
             ReportFw.log(Status.PASS, "A botao de Proceed to checkout recebe um clique.");
         } else {
