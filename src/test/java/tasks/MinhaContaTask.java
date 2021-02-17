@@ -36,10 +36,10 @@ public class MinhaContaTask {
     private void acessaWomen() {
         if (myAccountAppObject.getSelecionaWomenButton().isDisplayed()) {
             myAccountAppObject.getSelecionaWomenButton().click();
-            ReportFw.log(Status.PASS, "Acessa na pagina dos produtos.");
+            ReportFw.log(Status.PASS, "A botao de Mulher \"Women\" recebeu um cilque para acessa na pagina dos produtos.");
         } else {
             JsExecutorFw.highlight(driver, myAccountAppObject.getSelecionaWomenButton());
-            ReportFw.log(Status.FAIL, "Nao acessa na pagina dos produtos.");
+            ReportFw.log(Status.FAIL, "A botao de Mulher \"Women\" nao recebeu um cilque.");
         }
     }
 }

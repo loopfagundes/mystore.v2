@@ -118,9 +118,9 @@ public class CadastraUsuarioTask {
     private void registro() {
        if(cadastraUsuarioAppObject.getRegistroButton().isDisplayed()) {
            cadastraUsuarioAppObject.getRegistroButton().click();
-           ReportFw.log(Status.PASS, "A botao recebeu um clique. Registrou com sucesso.");
+           ReportFw.log(Status.PASS, "A botao de registro recebeu um clique. Registrou com sucesso.");
        } else {
-           ReportFw.log(Status.FAIL, "A botao nao recebeu um clique.");
+           ReportFw.log(Status.FAIL, "A botao de registro nao recebeu um clique.");
        }
     }
 }

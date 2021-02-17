@@ -20,9 +20,9 @@ public class IndexTask {
         ReportFw.log(Status.INFO, "A pagina de Index.");
         if (indexAppObject.getSignUpButton().isDisplayed()) {
             indexAppObject.getSignUpButton().click();
-            ReportFw.log(Status.PASS, "Acessa na pagina de login.");
+            ReportFw.log(Status.PASS, "A botao de Sign Up recebeu um clique.");
         } else {
-            ReportFw.log(Status.FAIL, "Nao acessa na pagina de login.");
+            ReportFw.log(Status.FAIL, "A botao de Sign Up recebeu um clique.");
         }
     }
 }

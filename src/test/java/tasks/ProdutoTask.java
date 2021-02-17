@@ -67,7 +67,13 @@ public class ProdutoTask {
     }
 
     private void adicionaNoCarrinho() {
-        produtoAppObject.getAdicionaCarrinhoButton().click();
+        if (produtoAppObject.getAdicionaCarrinhoButton().isDisplayed()) {
+            ReportFw.log(Status.PASS, "A botao de Adiciona para Carrinho recebeu um cilque.");
+            produtoAppObject.getAdicionaCarrinhoButton().click();
+        } else {
+            JsExecutorFw.highlight(driver, produtoAppObject.getAdicionaCarrinhoButton());
+            ReportFw.log(Status.FAIL, "A botao de Adiciona para Carrinho recebeu um cilque.", ScreenshotFw.viewScreenshot(driver));
+        }
     }
 
     private void fazerCheckout() {
