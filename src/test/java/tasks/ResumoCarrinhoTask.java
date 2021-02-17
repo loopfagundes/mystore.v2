@@ -54,7 +54,7 @@ public class ResumoCarrinhoTask {
             ReportFw.log(Status.PASS, "Total os produtos estao corretas.");
         } else {
             JsExecutorFw.highlight(driver, resumoCarrinhoAppObject.getTotalProdutoText());
-            ReportFw.log(Status.FAIL, "Total os produtos estao incorretas. Verificar, por favor.");
+            ReportFw.log(Status.FAIL, "Total os produtos estao incorretas. Verificar, por favor.", ScreenshotFw.viewScreenshot(driver));
         }
     }
 
@@ -64,7 +64,7 @@ public class ResumoCarrinhoTask {
             ReportFw.log(Status.PASS, "O valor de envio esta correta.");
         } else {
             JsExecutorFw.highlight(driver, resumoCarrinhoAppObject.getTotalEnvioText());
-            ReportFw.log(Status.FAIL, "O valor de envio esta incorreta, Verificar, por favor.");
+            ReportFw.log(Status.FAIL, "O valor de envio esta incorreta, Verificar, por favor.", ScreenshotFw.viewScreenshot(driver));
         }
     }
 
@@ -74,11 +74,17 @@ public class ResumoCarrinhoTask {
             ReportFw.log(Status.PASS, "O valor de total esta correta.");
         } else {
             JsExecutorFw.highlight(driver, resumoCarrinhoAppObject.getTodoTotalText());
-            ReportFw.log(Status.FAIL, "O valor de total esta incorreta. Verificar, por favor.");
+            ReportFw.log(Status.FAIL, "O valor de total esta incorreta. Verificar, por favor.", ScreenshotFw.viewScreenshot(driver));
         }
     }
 
     private void fazerCheckout() {
-        resumoCarrinhoAppObject.getFazerCheckoutButton().click();
+        if (resumoCarrinhoAppObject.getFazerCheckoutButton().isDisplayed()) {
+            resumoCarrinhoAppObject.getFazerCheckoutButton().click();
+            ReportFw.log(Status.PASS, "A botao de Procced to Checkout recebeu um clique.");
+        } else {
+            JsExecutorFw.highlight(driver, resumoCarrinhoAppObject.getFazerCheckoutButton());
+            ReportFw.log(Status.FAIL, "A botao de Procced to Checkout nao recebeu um clique.", ScreenshotFw.viewScreenshot(driver));
+        }
     }
 }
