@@ -18,6 +18,7 @@ public class CompraComSucessoTestCase extends BaseTestFw {
     private ProdutoTask produtoTask = new ProdutoTask(driver);
     private ResumoCarrinhoTask resumoCarrinhoTask = new ResumoCarrinhoTask(driver);
     private EnderecoDeEntregaTask enderecoDeEntregaTask = new EnderecoDeEntregaTask(driver);
+    private EnvioTask envioTask = new EnvioTask(driver);
 
     @Test
     public void test() {
@@ -30,6 +31,7 @@ public class CompraComSucessoTestCase extends BaseTestFw {
             produtoTask.descricaoProduto();
             resumoCarrinhoTask.ResumoCarrinho();
             enderecoDeEntregaTask.enderecoDeEntregar();
+            envioTask.verficiaEnvio();
         } catch (Exception e) {
             System.out.println(e.getMessage());
             ReportFw.log(Status.ERROR, e.getMessage(), ScreenshotFw.viewScreenshot(driver));
